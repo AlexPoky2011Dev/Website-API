@@ -25,8 +25,8 @@ app.get('/portfolio', (req, res) => {
   const projects = [
     {
       id: 2,
-      image: 'http://localhost:5173/portfolio.png',
-      name: 'Nesnasim Negry',
+      image: 'https://yt3.googleusercontent.com/DQKHWL4ZSGJdb_XOc3MjWQrLwDuUwdmqTp7BKahvdTYEazfp0PqRF79eaHbsCPhPyGecLjL9UsM=s900-c-k-c0x00ffffff-no-rj',
+      name: 'Kaicenat Rizz',
       language: 'TypeScript',
       description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
       date: '30.4.2024',
