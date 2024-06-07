@@ -2,12 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const PORT = 40004;
 const logger = require('./src/utils/logger');
-const config = require('./src/config.json');
-
 const app = express();
-app.use(logger);
-app.use(config);
-app.use(cors());
+
+const middlewares = () => {
+  app.use(logger);
+  app.use(cors());
+}
+
 
 
 console.log('\x1b[33m● \x1b[0mStarting server...');
