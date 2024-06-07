@@ -3,13 +3,20 @@ const cors = require('cors');
 const PORT = 40004;
 const logger = require('./src/utils/logger');
 const app = express();
+const ACCESS_KEY = 'GhJ4EeH2L9';
 
 const middlewares = () => {
   app.use(logger);
   app.use(cors());
 }
 
-
+app.use((req, res, next) => {
+  const apiKey = Object.values(req.query)[0];
+  if (apiKey !== ACCESS_KEY) {
+    return res.status(401).json({ error: 'Invalid API key' });
+  }
+  next();
+});
 
 console.log('\x1b[33m● \x1b[0mStarting server...');
 
