@@ -2,18 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const PORT = 40004;
 const logger = require('./src/utils/logger');
+const config = require('./src/config.json');
 
-const app = express(); 
-app.use(logger); 
+const app = express();
+app.use(logger);
+app.use(config);
 app.use(cors());
 
 
 console.log('\x1b[33m● \x1b[0mStarting server...');
-
-process.on('SIGTERM', () => {
-  console.log('\x1b[31m● \x1bOffline');
-  process.exit(0);
-});
 
 app.listen(
     PORT,
